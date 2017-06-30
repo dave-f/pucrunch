@@ -1,4 +1,4 @@
-pu-crunch
+pucrunch
 ----
 
 A fork of `pucrunch` which includes source for unpacking on the BBC Micro.
@@ -12,12 +12,12 @@ Once the executable is built, packing your data down is very easy and is achieve
 ./pucrunch -d -c0 -l0x900 -s BIN/SOURCE.DAT BIN/DEST.DAT
 ```
 
-The few flags of note here are "-l" which tells it the address to unpack to, and "c0" to tell the cruncher we're not on a C64!
+The few flags of note here are `-l` which tells it the address to unpack to, and `-c0` to tell the cruncher we're not on a C64!
 
 Unpacking your data
 ----
 
-Now the data is packed, you'll need to include the decruncher into your sources, which I've modified to assemble under BeebASM; `uncrunch-bbc.asm`. Then all that remains is for you to unpack the data.
+Now the data is packed, you'll need to include the decruncher into your sources, which I've modified to assemble under BeebASM; see `uncrunch-bbc.asm`. Then all that remains is for you to unpack the data.
 
 The routine will unpack to the address specified on the cruncher command line, but that's just a few bytes into the header data so should be easy enough to change on the fly.
 
