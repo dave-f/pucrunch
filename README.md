@@ -36,6 +36,8 @@ ORG &1900
     LDY #LO(packedData+2)
     JSR unpack
     BCC unpackOK
+    
+    ; If C flag set, there has been an error
     LDA #70
     JSR &FFEE
     JSR &FFE7
@@ -59,4 +61,4 @@ INCBIN "BIN/DEST.DAT"
 Summary
 ----
 
-puCrunch is a handy little cruncher for 8 bit micros and is very easy to use.  I've not investigated the options too much on the crunching side of things but for my purposes it's been very useful.
+`pucrunch` is a handy little cruncher for 8 bit micros and is very easy to use.  I've not investigated the options too much on the crunching side of things but for my purposes it's been very useful.
